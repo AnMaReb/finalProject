@@ -1,0 +1,94 @@
+body {
+    background-color: #bbffbd;
+}
+
+h1 {
+    font-size: 300%;
+    font-style: italic;
+    text-align: center;
+}
+
+p {
+    font-size: 150%;
+    margin: 3% 5%;
+}
+
+figcaption {
+    font-size: 150%;
+    text-align: center;
+    margin: 2%;
+}
+
+h1, 
+p, 
+figcaption {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.grid {
+    display: grid;
+    place-content: center;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.grid img {
+    width: 97%;
+    border: 5px solid #150068;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (min-width:772px) {
+    .grid {
+        grid-template-columns: 45% 45%;
+        align-items: center;
+    }
+
+    .grid img {
+        border-radius: 50%;
+    }
+
+    .grid figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .grid img {
+        border-radius: 0;
+    }
+    
+    .grid figure:nth-child(3n) {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #6ea070;
+    }
+    
+    .grid img {
+        border-color: #000000;
+    }
+
+    figure {
+        background-color: #150068;
+        border-radius: 3%;
+        margin: 3%;
+        padding:3%;
+    }
+
+    figcaption {
+        color: #9fffef;
+    }
+}
